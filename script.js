@@ -6,7 +6,7 @@ let special = ['!','@','#','$','%','^','&', "*", '(', ')'];
 
 function generatePassword(){
     let password = "";
-    let passwordCon = [];
+    let passwordIs = [];
 
 let passwordSize;
     passwordSize = promt("Please type a password length from 8-128 characters");
@@ -19,9 +19,23 @@ let passwordSize;
     let stat = conform("Do you want to include numbers?")
     let special = confirm("Do you want to include special characters?")
 
-    
+     if (digitBig){
+        passwordIs =passwordIs.contact(upper)
+    }
+     if (digitLittle){
+        passwordIs =passwordIs.contact(little)
+    }
+     if (digitStat){
+        passwordIs =passwordIs.concat(numbers); 
+    }
+     if (digitSpecial){
+        passwordIs =paswordIs.contact(specials)
+    }
 
-
+    for(var i=0; i<passwordLength; i++){
+        password += passwordIs[Math.floor(Math.random()*passwordIs.length)]
+    }
+    return password
 
 
 
