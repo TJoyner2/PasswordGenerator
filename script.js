@@ -8,10 +8,28 @@ function generatePassword(){
     let password = "";
     let passwordCon = [];
 
-let passwordLength;
-    passwordLength = promt("Please type a password length from 8-128 characters");
-        if (passwordLength<8 || passwordLength > 128) {
+let passwordSize;
+    passwordSize = promt("Please type a password length from 8-128 characters");
+        if (passwordSize<8 || passwordSize > 128) {
             alert ("Please make password between 8-128 characters");
             return
         }
+    let letterBig = confirm("Do you want to include uppercase characters?");
+    let letterLittle = confirm("Do Do you want to include lowercase characters?")
+    let stat = conform("Do you want to include numbers?")
+    let special = confirm("Do you want to include special characters?")
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 } 
