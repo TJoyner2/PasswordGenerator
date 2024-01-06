@@ -37,13 +37,10 @@ let passwordSize;
     }
     return password
 
-
-
-
-
-
-
-
-
-
+function writePassword(){
+    var password = generatePassword();
+    var passwordText = document.getElementById("password");
+    passwordText.value = password;
+}
+generateBtn.addEventListener("click", writePassword);
 } 
