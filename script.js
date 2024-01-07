@@ -1,41 +1,51 @@
-var generateBtn = document.querySelector('#generate')
+var generateBtn = document.querySelector('#generate');
 let big = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let little = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let number = [0,1,2,3,4,5,6,7,8,9];
+let stat = [0,1,2,3,4,5,6,7,8,9];
 let special = ['!','@','#','$','%','^','&', "*", '(', ')'];
 
 function generatePassword(){
+    
+    
     let password = "";
     let passwordIs = [];
 
+
 let passwordSize;
-    passwordSize = promt("Please type a password length from 8-128 characters");
+
+
+    passwordSize = prompt("Please type a password length from 8-128 characters");
         if (passwordSize<8 || passwordSize > 128) {
             alert ("Please make password between 8-128 characters");
             return
         }
-    let letterBig = confirm("Do you want to include uppercase characters?");
-    let letterLittle = confirm("Do Do you want to include lowercase characters?")
-    let stat = conform("Do you want to include numbers?")
-    let special = confirm("Do you want to include special characters?")
 
-     if (digitBig){
-        passwordIs =passwordIs.contact(upper)
+
+    let characterBig = confirm("Do you want to include uppercase characters?");
+    let characterLittle = confirm("Do Do you want to include lowercase characters?");
+    let characterStat = confirm("Do you want to include numbers?");
+    let characterSpecial = confirm("Do you want to include special characters?");
+
+        if (characterBig){
+            passwordIs =passwordIs.concat(big)
     }
-     if (digitLittle){
-        passwordIs =passwordIs.contact(little)
+        if (characterLittle){
+            passwordIs =passwordIs.concat(little)
     }
-     if (digitStat){
-        passwordIs =passwordIs.concat(numbers); 
+         if (characterStat){
+            passwordIs =passwordIs.concat(stat); 
     }
-     if (digitSpecial){
-        passwordIs =paswordIs.contact(specials)
+        if (characterSpecial){
+            passwordIs =passwordIs.concat(special)
     }
 
-    for(var i=0; i<passwordLength; i++){
+
+
+    for(var i=0; i<passwordSize; i++){
         password += passwordIs[Math.floor(Math.random()*passwordIs.length)]
     }
-    return password
+    return password;
+}
 
 function writePassword(){
     var password = generatePassword();
@@ -43,4 +53,3 @@ function writePassword(){
     passwordText.value = password;
 }
 generateBtn.addEventListener("click", writePassword);
-} 

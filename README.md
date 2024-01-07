@@ -13,3 +13,14 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+link to github repo
+https://github.com/TJoyner2/PasswordGenerator
+
+link to deployed website
+ https://tjoyner2.github.io/PasswordGenerator/
+
+
+![Alt text](<2024-01-05 password generator21_37_58-.png>)
+
+Created a password generator that will givce you a password between 8-128 characters an dask if you want uppercase, lowercase, numbers and special characters. 
